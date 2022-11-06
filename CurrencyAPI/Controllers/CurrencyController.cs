@@ -10,14 +10,18 @@ namespace CurrencyAPI.Controllers
     [Route("api/[controller]/[action]")]
     public class CurrencyController : ControllerBase
     {
-        ICurrencyService _currencyService = new CurrencyService();
+        private ICurrencyService _currencyService;
+        public CurrencyController(ICurrencyService currencyService)
+        {
+            _currencyService = currencyService;
+        }
         [HttpGet]
         [ActionName("AllCurrencies")]
         public AllResponseDataCurrencies GetAllCurrencies()
-        {  
-           return _currencyService.GetAll();
+        {
+            return _currencyService.GetAll();
         }
-    
+
         [HttpPost]
         [ActionName("GetCurrencyByCode")]
         public ResponseDataCurrency GetCurrencyByCode(Currencies request)

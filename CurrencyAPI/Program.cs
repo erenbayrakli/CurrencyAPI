@@ -1,3 +1,5 @@
+using CurrencyAPI.Services;
+using CurrencyAPI.Services.Interfaces;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,7 @@ builder.Services.AddControllers().AddJsonOptions(opt => { opt.JsonSerializerOpti
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ICurrencyService, CurrencyService>();
 
 var app = builder.Build();
 
