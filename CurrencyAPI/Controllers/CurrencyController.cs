@@ -14,7 +14,7 @@ namespace CurrencyAPI.Controllers
         [HttpGet]
         [ActionName("AllCurrencies")]
         public AllResponseDataCurrencies GetAllCurrencies()
-        { 
+        {  
            return _currencyService.GetAll();
         }
     
