@@ -11,6 +11,7 @@ builder.Services.AddControllers().AddJsonOptions(opt => { opt.JsonSerializerOpti
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICurrencyService, CurrencyService>();
+builder.Services.AddScoped<IBinanceService, BinanceService>();
 
 var app = builder.Build();
 
