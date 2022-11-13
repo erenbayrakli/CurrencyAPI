@@ -1,2 +1,2 @@
 # CurrencyAPI
-API that pulls exchange rate data over TCMB and BINANCE for coins
+API that pulls exchange rate data over TCMB also BINANCE for coins
